@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>ยินดีต้อนรับสู่เว็บบอร์ด</h1>
+  
+  <% if user_signed_in? %>
+    <div class="user-info">
+      <h2>สวัสดี <%= current_user.name %></h2>
+      <p>อีเมล: <%= current_user.email %></p>
+      <%= button_to 'ออกจากระบบ', destroy_user_session_path, method: :delete, class: 'auth-button' %>
+    </div>
+  <% else %>
+    <div class="auth-links">
+      <%= link_to 'เข้าสู่ระบบ', new_user_session_path, class: 'auth-link' %> |
+      <%= link_to 'สมัครสมาชิก', new_user_registration_path, class: 'auth-link' %>
+    </div>
+  <% end %>
+</div>
