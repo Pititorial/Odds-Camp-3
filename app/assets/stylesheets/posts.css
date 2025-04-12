@@ -1,0 +1,51 @@
+/* Post specific styles */
+.post-content {
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.post-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.post-actions {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.post-timestamp {
+  color: #6B7280;
+  font-size: 0.875rem;
+}
+
+.post-author {
+  font-weight: 600;
+  color: #1F2937;
+}
+
+/* Form styles */
+.post-form {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.post-form textarea {
+  min-height: 8rem;
+}
+
+/* Feed styles */
+.posts-feed {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.post-card {
+  transition: transform 0.2s;
+}
+
+.post-card:hover {
+  transform: translateY(-2px);
+} 

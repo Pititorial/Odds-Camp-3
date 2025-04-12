@@ -1,0 +1,33 @@
+<div class="container mx-auto px-4 py-8">
+  <div class="max-w-2xl mx-auto">
+    <h1 class="text-3xl font-bold mb-8">แก้ไขโพสต์</h1>
+
+    <%= form_with(model: @post, local: true, class: "space-y-6") do |f| %>
+      <% if @post.errors.any? %>
+        <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
+          <h2 class="font-bold"><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+          <ul class="list-disc list-inside">
+            <% @post.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+
+      <div>
+        <%= f.label :content, "เนื้อหา", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.text_area :content, rows: 4, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+      </div>
+
+      <div>
+        <%= f.label :image, "รูปภาพ (ไม่บังคับ)", class: "block text-sm font-medium text-gray-700" %>
+        <%= f.text_field :image, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500" %>
+      </div>
+
+      <div class="flex justify-end space-x-4">
+        <%= link_to 'ยกเลิก', posts_path, class: "bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded" %>
+        <%= f.submit "บันทึกการแก้ไข", class: "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" %>
+      </div>
+    <% end %>
+  </div>
+</div>
